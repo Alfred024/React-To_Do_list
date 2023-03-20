@@ -14,7 +14,9 @@ function AppUI() {
         loading,
         searchedTodos,
         completeTodo,
-        deleteTodo
+        deleteTodo,
+        openModal,
+        setOpenModal
     } = React.useContext(TodoContext);
 
 
@@ -39,12 +41,18 @@ function AppUI() {
               />
               ))}
           </TodoList>
-          <Modal>
-            <p>
-              Aquí ira el modal
-            </p>
-          </Modal>
-          <CreateTodoButton />
+
+          {
+            
+            !!openModal && (
+              <Modal>
+                Próximamente un modal...
+              </Modal>
+            )
+          }
+          <CreateTodoButton 
+            setOpenModal = {setOpenModal}
+          />
         </React.Fragment>
     );
 }

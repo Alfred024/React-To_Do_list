@@ -13,7 +13,8 @@ function TodoProvider(props){
       } = useLocalStorage('Collection1');
     
       const [searchValue, setSearchValue] = React.useState('');
-    
+      const [openModal, setOpenModal] = React.useState(false);
+
       const completedTodos = todos.filter(todo => !!todo.completed).length;
       const totalTodos = todos.length;
     
@@ -55,7 +56,9 @@ function TodoProvider(props){
             setSearchValue,
             searchedTodos,
             completeTodo,
-            deleteTodo
+            deleteTodo,
+            openModal,
+            setOpenModal
           }}
         >
           {/* Logramos juntat a todos los componentes y comportamientos que mandemos a través del Provider */}
