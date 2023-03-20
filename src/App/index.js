@@ -1,19 +1,13 @@
 import React from 'react';
 import { AppUI } from './AppUI';
+import { TodoProvider } from '../TodoContext';
 
 function App() {
 
   return (
-    <AppUI
-      loading={loading}
-      totalTodos={totalTodos}
-      completedTodos={completedTodos}
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      searchedTodos={searchedTodos}
-      completeTodo={completeTodo}
-      deleteTodo={deleteTodo}
-    />
+    <TodoProvider>
+      <AppUI/>
+    </TodoProvider>
   );
 }
 

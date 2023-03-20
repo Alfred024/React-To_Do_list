@@ -45,18 +45,23 @@ function TodoProvider(props){
 
     return(
         /*Envuelve toda la app*/
-        /*Debe tener la info,. de cualquier componente de la App*/
+        /*Debe tener la info. de cualquier componente de la App*/
         <TodoContext.Provider 
           value={{
-            
+            loading,
+            totalTodos,
+            completedTodos,
+            searchValue,
+            setSearchValue,
+            searchedTodos,
+            completeTodo,
+            deleteTodo
           }}
         >
+          /*Logramos juntat a todos los componentes y comportamientos que mandemos a través del Provider*/
             {props.children}
         </TodoContext.Provider>
     );
 }
 
-/*Para compartir la info. */
-<TodoContext.Consumer>
-
-</TodoContext.Consumer>
+export {TodoContext, TodoProvider};
