@@ -58,7 +58,7 @@ function TodoProvider(props){
             deleteTodo
           }}
         >
-          /*Logramos juntat a todos los componentes y comportamientos que mandemos a través del Provider*/
+          {/* Logramos juntat a todos los componentes y comportamientos que mandemos a través del Provider */}
             {props.children}
         </TodoContext.Provider>
     );
