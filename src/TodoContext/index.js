@@ -44,6 +44,14 @@ function TodoProvider(props){
         saveTodos(newTodos);
       };
 
+      const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+          completed: false,
+          text
+        });
+        saveTodos(newTodos);
+      };
     return(
         /*Envuelve toda la app*/
         /*Debe tener la info. de cualquier componente de la App*/
@@ -56,6 +64,7 @@ function TodoProvider(props){
             setSearchValue,
             searchedTodos,
             completeTodo,
+            addTodo,
             deleteTodo,
             openModal,
             setOpenModal

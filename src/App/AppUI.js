@@ -6,6 +6,7 @@ import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from "../Modal";
+import { TodoForm } from "../TodoForm";
 
 function AppUI() {
 
@@ -46,7 +47,8 @@ function AppUI() {
             
             !!openModal && (
               <Modal>
-                Próximamente un modal...
+                <TodoForm>
+                </TodoForm>
               </Modal>
             )
           }
