@@ -7,6 +7,8 @@ import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
+import { EmptyTodos } from "../EmptyTodos";
+import { TodosLoading } from '../TodosLoading';
 
 function AppUI() {
 
@@ -30,8 +32,9 @@ function AppUI() {
           <TodoList>
               {/* Usamos el operador && como una forma de expresar un "entonces..." (es una mamada) */}
               {/* {error && <p>Hay un error...</p>} */}
-              {loading && <p>Cargando...</p>}
-              {(!loading && !searchedTodos.length) && <p>No hay todos, crea uno</p>}
+              
+              {loading && <TodosLoading />}
+              {(!loading && !searchedTodos.length) && <EmptyTodos />}
               {searchedTodos.map(todo => (
               <TodoItem
                   key={todo.text}
